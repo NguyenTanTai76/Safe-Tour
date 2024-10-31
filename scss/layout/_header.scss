@@ -11,6 +11,7 @@
   margin-top: 32px;
 
   @include abstracts.breakpoint(sm) {
+    flex-direction: row-reverse;
     height: 34px;
     margin-top: 18px;
   }
@@ -26,10 +27,14 @@
 
 .navbar {
   margin-left: 233px;
-  position: relative;
 
   @include abstracts.breakpoint(sm) {
     display: none;
+  }
+
+  &__overlay {
+    visibility: hidden;
+    opacity: 0;
   }
 
   &__list {

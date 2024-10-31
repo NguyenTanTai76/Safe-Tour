@@ -1161,6 +1161,7 @@ html {
 }
 @media (max-width: 575.98px) {
   .top-bar {
+    flex-direction: row-reverse;
     height: 34px;
     margin-top: 18px;
   }
@@ -1176,12 +1177,15 @@ html {
 
 .navbar {
   margin-left: 233px;
-  position: relative;
 }
 @media (max-width: 575.98px) {
   .navbar {
     display: none;
   }
+}
+.navbar__overlay {
+  visibility: hidden;
+  opacity: 0;
 }
 .navbar__list {
   gap: 34px;
