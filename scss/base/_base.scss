@@ -10,11 +10,16 @@ html {
 
 /* Font mặc định cho toàn bộ trang là Inter */
 body {
-    font-size: 1.6rem;
-    font-family: 'Inter', sans-serif;
-  }
-  
-  /* Font cho các thẻ tiêu đề (h1 -> h6) là Poppins */
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', sans-serif;
-  }
+  font-size: 1.6rem;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Font cho các thẻ tiêu đề (h1 -> h6) là Poppins */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Poppins', sans-serif;
+}
