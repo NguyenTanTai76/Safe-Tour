@@ -21,28 +21,25 @@ function load(selector, path) {
  * <button class="js-toggle" toggle-target="#box">Click</button>
  * <div id="box">Content show/hide</div>
  */
-window.addEventListener('template-loaded', initJsToggle);
+window.addEventListener("template-loaded", initJsToggle);
 
 function initJsToggle() {
-  const buttons = document.querySelectorAll('.js-toggle');
-  buttons.forEach((button) => {
-    const target = button.getAttribute('toggle-target');
-    if (!target) {
-      console.error(`Cần thêm toggle-target cho: ${button.outerHTML}`);
-      return;
-    }
-    button.onclick = () => {
-      const navbar = document.querySelector(target);
-      if (!navbar) {
-        return console.error(`Không tìm thấy phần tử "${target}"`);
-      }
-      const isHidden = navbar.classList.contains('hide');
+    $$(".js-toggle").forEach((button) => {
+        const target = button.getAttribute("toggle-target");
+        if (!target) {
+            document.body.innerText = `Cần thêm toggle-target cho: ${button.outerHTML}`;
+        }
+        button.onclick = () => {
+            if (!$(target)) {
+                return (document.body.innerText = `Không tìm thấy phần tử "${target}"`);
+            }
+            const isHidden = $(target).classList.contains("hide");
 
-      requestAnimationFrame(() => {
-        navbar.classList.toggle('hide', !isHidden);
-        navbar.classList.toggle('show', isHidden);
-        console.log(`Navbar ${isHidden ? 'hiện' : 'ẩn'} ra`);
-      });
-    };
-  });
+            requestAnimationFrame(() => {
+                $(target).classList.toggle("hide", !isHidden);
+                $(target).classList.toggle("show", isHidden);
+            });
+        };
+    });
 }
+

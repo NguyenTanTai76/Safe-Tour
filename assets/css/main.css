@@ -1161,7 +1161,6 @@ html {
 }
 @media (max-width: 575.98px) {
   .top-bar {
-    flex-direction: row-reverse;
     height: 34px;
     margin-top: 18px;
   }
@@ -1180,23 +1179,70 @@ html {
 }
 @media (max-width: 575.98px) {
   .navbar {
-    display: none;
+    margin-left: 0;
+    padding: 20px 0;
+    inset: 0 0 0 30%;
+    position: fixed;
+    background: var(--top-act-btn-text-color);
+    z-index: 9;
+  }
+}
+.navbar__close-btn {
+  display: none;
+  width: 24px;
+  height: 24px;
+}
+@media (max-width: 575.98px) {
+  .navbar__close-btn {
+    display: inline-block;
+    position: fixed;
+    inset: 3% 0 0 85%;
+    padding: 0 20px;
   }
 }
 .navbar__overlay {
   visibility: hidden;
   opacity: 0;
 }
+@media (max-width: 575.98px) {
+  .navbar__overlay {
+    visibility: visible;
+    opacity: 1;
+    position: fixed;
+    inset: 0;
+    z-index: 8;
+    background: rgba(0, 0, 0, 0.4);
+  }
+}
 .navbar__list {
   gap: 34px;
 }
+@media (max-width: 575.98px) {
+  .navbar__list {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 50px;
+  }
+}
+@media (max-width: 575.98px) {
+  .navbar__item {
+    width: 100%;
+  }
+}
 .navbar__link {
+  display: block;
   position: relative;
   font-size: 1.4rem;
   font-weight: 500;
   line-height: 16px;
   word-wrap: break-word;
   transition: color 0.3s;
+}
+@media (max-width: 575.98px) {
+  .navbar__link {
+    padding: 0 20px;
+    font-size: 1.5rem;
+  }
 }
 .navbar__link::after {
   content: "";
