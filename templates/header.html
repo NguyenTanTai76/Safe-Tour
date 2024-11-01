@@ -5,9 +5,14 @@
     <h2 class="logo__title">Safe Tour</h2>
   </a>
 
+  <!-- More -->
+  <button class="top-bar__more d-none d-sm-block js-toggle" toggle-target="#navbar">
+    <img src="./assets/icons/more.svg" alt="" class="top-bar__more-icon" />
+  </button>
+
   <!-- Navbar -->
-  <nav id="navbar" class="navbar">
-    <button class="navbar__close-btn js-toggle" toggle-target="#navbar">
+  <nav id="navbar" class="navbar hide">
+    <button class="navbar__close-btn js-toggle d-none d-sm-block" toggle-target="#navbar">
       <i class="fa-solid fa-xmark"></i>
     </button>
 
@@ -30,15 +35,10 @@
     </ul>
   </nav>
 
-  <!-- More -->
-  <button class="top-bar__more js-toggle" toggle-target="#navbar">
-    <img src="./assets/icons/more.svg" alt="" class="top-bar__more-icon" />
-  </button>
-
   <div class="navbar__overlay js-toggle" toggle-target="#navbar"></div>
 
   <!-- Action -->
-  <div class="top-act">
+  <div class="top-act d-sm-none">
     <a href="#!" class="top-act__btn top-act__link">Contact us</a>
   </div>
 </div>
