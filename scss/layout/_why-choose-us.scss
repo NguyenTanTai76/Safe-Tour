@@ -1,0 +1,113 @@
+@use '../abstracts';
+
+.choose-us {
+  &__wrap {
+    margin-left: 50px;
+    margin-right: 138px;
+    width: 436px;
+    height: 518px;
+    border-radius: 64px;
+    background: lightgray 0px -65.313px / 100.341% 112.609% no-repeat;
+
+    @include abstracts.screen(sm) {
+      display: none;
+    }
+  }
+
+  &__thumb {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  &__content-layout {
+    width: 47%;
+
+    @include abstracts.screen(sm) {
+      width: 335px;
+    }
+  }
+
+  &__content {
+    margin-left: auto;
+    width: 496px;
+    max-height: 479.075px;
+
+    @include abstracts.screen(sm) {
+      max-width: 335px;
+    }
+  }
+
+  &__desc {
+    margin: 16px 0 60px;
+    width: 493px;
+    height: 51.9px;
+
+    @include abstracts.screen(sm) {
+      max-width: 335px;
+      margin: 10px 0 30px !important;
+    }
+  }
+
+  &__item {
+    max-height: 73.857px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--bg-body);
+    box-shadow: 0 4px 10px var(--shadow-item);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+    &:nth-of-type(2) {
+      margin: 40px 0;
+
+      @include abstracts.screen(sm) {
+        margin: 16px 0;
+      }
+    }
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px var(--shadow-item-hover);
+    }
+
+    @include abstracts.screen(sm) {
+      padding: 0;
+      gap: 14px;
+    }
+  }
+
+  &__item-thumb {
+    @include abstracts.screen(sm) {
+      max-width: 40px;
+    }
+  }
+
+  &__item-title {
+    margin-bottom: 8px;
+    color: var(--navbar-link-hover-color);
+    font-weight: 600;
+    line-height: 162.5%;
+
+    @include abstracts.screen(sm) {
+      margin-bottom: 6px;
+      font-family: Inter;
+      font-size: 1.4rem;
+      line-height: 142.857%;
+    }
+  }
+
+  &__item-desc {
+    max-width: 319px;
+    height: 39.923px;
+    color: var(--text-color);
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 142.857%;
+
+    @include abstracts.screen(sm) {
+      font-size: 1rem;
+      line-height: 160%;
+    }
+  }
+}

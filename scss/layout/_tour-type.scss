@@ -1,0 +1,59 @@
+@use '../abstracts';
+
+.tour-type__heading {
+  margin-bottom: 60px;
+  text-align: center;
+
+  @include abstracts.screen(sm) {
+    margin-bottom: 40px;
+  }
+}
+
+.type-item {
+  @include abstracts.screen(sm) {
+    padding: 0 23px;
+    margin-bottom: 20px;
+  }
+
+  &__wrap {
+    width: 270px;
+    height: 240px;
+    border-radius: 12px;
+    border: 2px solid var(--border-type-item);
+    background: var(--bg-body);
+    text-align: center;
+
+    @include abstracts.screen(sm) {
+      width: 100%;
+    }
+  }
+
+  &__thumb {
+    margin: 44px 0 28px;
+    max-width: 100%;
+    max-height: 68px;
+  }
+
+  &__title {
+    color: var(--navbar-link-hover-color);
+    text-align: center;
+    font-family: Inter;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 100%;
+  }
+
+  &__desc {
+    margin: 18px 0 42px;
+    color: var(--text-color);
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 100%;
+
+    &-price {
+      color: var(--bg-color);
+      font-weight: 600;
+      line-height: 14px;
+    }
+  }
+}

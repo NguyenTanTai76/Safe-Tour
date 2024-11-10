@@ -161,3 +161,14 @@ function initJsToggle() {
     };
   });
 }
+
+// Hero
+document.addEventListener('DOMContentLoaded', () => {
+  const heroSection = $('.hero');
+
+  window.onload = function () {
+    setTimeout(() => {
+      heroSection.classList.add('visible');
+    }, 300);
+  };
+});

@@ -5,12 +5,12 @@
   align-items: center;
   gap: 8px;
 
-  @include abstracts.breakpoint(sm) {
+  @include abstracts.screen(sm) {
     margin-right: auto;
   }
 
   &__img {
-    @include abstracts.breakpoint(sm) {
+    @include abstracts.screen(sm) {
       width: 34px;
     }
   }
@@ -22,7 +22,7 @@
     font-weight: 700;
     word-wrap: break-word;
 
-    @include abstracts.breakpoint(sm) {
+    @include abstracts.screen(sm) {
       font-size: 2.2rem;
     }
   }

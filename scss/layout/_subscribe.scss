@@ -1,0 +1,118 @@
+@use '../abstracts';
+
+.tour-subscribe {
+  position: relative;
+  height: 349px;
+  border-radius: 20px;
+  background: var(--bg-tour-subscribe);
+
+  &__wrap {
+    padding: 70px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  &__heading {
+    width: 512px;
+    color: var(--bg-body);
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 125%;
+
+    @include abstracts.screen(sm) {
+      width: 335px;
+      text-align: center;
+      font-size: 3.3rem;
+    }
+  }
+
+  &__desc {
+    margin: 6px 0 40px;
+    display: inline-block;
+    width: 425px;
+    color: var(--text-color-subscribe);
+    font-family: Poppins;
+    font-weight: 600;
+    font-family: Poppins;
+    font-weight: 600;
+    line-height: 162.5%;
+
+    @include abstracts.screen(sm) {
+      display: none;
+    }
+  }
+
+  &__form {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 450px;
+    height: 60px;
+    background: var(--bg-body);
+    border-radius: 12px;
+    overflow: hidden;
+
+    @include abstracts.screen(sm) {
+      width: 300px;
+      margin-top: 70px;
+    }
+  }
+
+  &__email {
+    width: 100%;
+    padding: 23px 0 23px 26px;
+    color: var(--text-color-email);
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 100%;
+    outline: none;
+    border: none;
+  }
+
+  &__icon {
+    text-align: center;
+    position: absolute;
+    top: 0px;
+    right: 12px;
+    cursor: pointer;
+
+    @include abstracts.screen(sm) {
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      top: 10px;
+    }
+  }
+
+  &__decor {
+    position: absolute;
+
+    &:nth-of-type(1) {
+      top: -27px;
+      left: 100px;
+      width: 88px;
+      height: 88px;
+
+      @include abstracts.screen(sm) {
+        top: -30px;
+        left: 100px;
+        width: 60px;
+        height: 60px;
+      }
+    }
+
+    &:nth-of-type(2) {
+      bottom: 100px;
+      right: 150px;
+      width: 62px;
+      height: 62px;
+
+      @include abstracts.screen(sm) {
+        display: none;
+      }
+    }
+  }
+}

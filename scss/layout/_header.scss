@@ -5,24 +5,28 @@
   align-items: center;
 }
 
+.header {
+  margin-bottom: 50px;
+  padding-top: 32px;
+
+  @include abstracts.screen(sm) {
+    padding-top: 18px;
+    margin-bottom: 58px;
+  }
+}
+
 .top-bar {
   @extend %flexItemCenter;
   height: 48px;
-  margin-top: 32px;
-
-  @include abstracts.breakpoint(sm) {
-    margin-top: 18px;
-  }
-
 }
 
 .navbar {
   margin-left: 233px;
 
-  @include abstracts.breakpoint(sm) {
+  @include abstracts.screen(sm) {
     position: fixed;
-    inset: 0 0 0 30%;
-    background: var(--top-act-btn-text-color);
+    inset: 0 0 0 20%;
+    background: var(--bg-body);
     z-index: 9;
     margin-left: 0;
     padding: 20px 0;
@@ -41,7 +45,7 @@
   }
 
   &__item {
-    @include abstracts.breakpoint(sm) {
+    @include abstracts.screen(sm) {
       width: 100%;
     }
   }
@@ -49,13 +53,13 @@
   &__close-btn {
     display: none;
 
-    @include abstracts.breakpoint(sm) {
+    @include abstracts.screen(sm) {
+      width: 30px;
       font-size: 2rem;
       display: block;
-      padding: 0 20px;
       position: absolute;
-      top: 27px;
-      right: 7px;
+      top: 30px;
+      right: 40px;
     }
   }
 
@@ -63,7 +67,7 @@
     visibility: hidden;
     opacity: 0;
 
-    @include abstracts.breakpoint(sm) {
+    @include abstracts.screen(sm) {
       position: fixed;
       inset: 0;
       z-index: 8;
@@ -71,7 +75,7 @@
       transition: opacity, visibility;
       transition-duration: 0.5s;
 
-      background: rgba($color: #000000, $alpha: 0.4);
+      background: rgba($color: var(--bg-rgba), $alpha: 0.4);
     }
   }
 
@@ -79,14 +83,13 @@
     @extend %flexItemCenter;
     gap: 34px;
 
-    @include abstracts.breakpoint(sm) {
+    @include abstracts.screen(sm) {
+      width: 300px;
       padding: 0 20px;
-      width: 100%;
-      flex-direction: column;
       position: absolute;
-      top: 65px;
+      top: 100px;
+      flex-direction: column;
       gap: 28px;
-
       overscroll-behavior: contain;
     }
   }
@@ -105,7 +108,7 @@
     word-wrap: break-word;
     transition: color 0.3s;
 
-    @include abstracts.breakpoint(sm) {
+    @include abstracts.screen(sm) {
       padding: 0 20px;
       font-size: 1.5rem;
     }
@@ -139,7 +142,7 @@
     height: 48px;
     display: inline-block;
     background: var(--top-act-btn-bg-color);
-    color: var(--top-act-btn-text-color);
+    color: var(--bg-body);
     font-size: 1.4rem;
     font-weight: 500;
     border: 1.4px solid transparent;

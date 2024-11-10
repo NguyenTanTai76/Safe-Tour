@@ -1,17 +1,65 @@
 html {
-    /* Text & Background Colors */
-    --text-color: #676a6c;
-    --bg-color: #ff7b29;
-  
-    /* Navbar */
-    --navbar-link-hover-color: #2d3134;
-  
-    /* Logo */
-    --logo-title-color: #212832;
-  
-    /* Top Action Button */
-    --top-act-btn-bg-color: #31c3e0;
-    --top-act-btn-text-color: #fff;
-    --top-act-btn-bg-hover: #28b3d8;
-  }
-  
+  /* Text & Background Colors */
+  --text-color: #676a6c;
+  --bg-color: #ff7b29;
+  --bg-rgba: #000;
+  --bg-body: #fff;
+
+  /* Button*/
+  --bg-box-shadow: rgba(229, 89, 54, 0.25);
+
+  /* Navbar */
+  --navbar-link-hover-color: #2d3134;
+
+  /* Logo */
+  --logo-title-color: #212832;
+
+  /* Top Action Button */
+  --top-act-btn-bg-color: #31c3e0;
+  --top-act-btn-bg-hover: #28b3d8;
+
+  /* Hero */
+
+  --hero-link: #4d4f56;
+  --hero-card-number: #0d1e3f;
+  --hero-card-desc: #a5a8b4;
+  --text-color-total-desc: #aeb4cf;
+  --color-wrap: rgba(0, 0, 0, 0.1);
+  --bg-line: #1f1a1e;
+  --text-item-total: #0a192d;
+  --text-item-desc: #777f8b;
+  --text-search-desc: #697280;
+  --bg-hero-search: #132742;
+  --bg-shadow-search: rgba(0, 0, 0, 0.2);
+
+  /* Tour */
+  --text-body-title: #1f1d63;
+  --shadow-tour: rgba(0, 0, 0, 0.2);
+
+  /* Why choose us */
+  --shadow-item: rgba(0, 0, 0, 0.1);
+  --shadow-item-hover: rgba(0, 0, 0, 0.15);
+
+  /* Trending */
+  --color-hover-control: #505050;
+  --color-trending-item-place: #8a8a8a;
+  --bg-separate: #e1e1e1;
+  --rgba-trending-item: rgba(0, 0, 0, 0.06);
+  --color-trending-item-footer-desc: #737979;
+
+  /* Tour type */
+  --border-type-item: #ececec;
+
+  /* Tour feedback*/
+  --text-feedback-profile-name: #000;
+
+  /* Tour Subscribe */
+  --bg-tour-subscribe: #e8c400;
+  --text-color-subscribe: rgba(255, 255, 255, 0.88);
+  --text-color-email: #b3b4b5;
+
+  /* Footer */
+  --text-title-footer: #020000;
+  --text-hover-footer: #31c3e0;
+  --color-icon-footer: #bcbcbc;
+}

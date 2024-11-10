@@ -1,0 +1,226 @@
+@use '../abstracts';
+
+.tour-article {
+  &__top {
+    margin-bottom: 60px;
+    text-align: center;
+
+    @include abstracts.screen(sm) {
+      width: 335px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__desc {
+    display: inline-block;
+    width: 733px;
+    color: var(--text-color);
+    text-align: center;
+    font-weight: 400;
+    line-height: 162.5%;
+    transition: opacity 0.3s ease;
+
+    @include abstracts.screen(sm) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__desc:hover {
+    opacity: 0.8;
+  }
+
+  &__heading {
+    font-size: 2.8rem;
+    color: var(--navbar-link-hover-color);
+    font-weight: 600;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: var(--primary-color);
+    }
+  }
+}
+
+.toast-primary {
+  @include abstracts.screen(sm) {
+    margin-bottom: 24px;
+  }
+
+  &__thumb {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+  }
+
+  &__thumb:hover {
+    transform: scale(1.05);
+  }
+
+  &__content {
+    margin-top: 42px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+    @include abstracts.screen(sm) {
+      margin-top: 16px;
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    margin-bottom: 14px;
+    width: 359px;
+    color: var(--navbar-link-hover-color);
+    font-family: Inter;
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 146.154%;
+    transition: color 0.3s ease;
+
+    @include abstracts.screen(sm) {
+      margin-bottom: 10px;
+      width: 335px;
+      font-size: 2rem;
+      line-height: 150%;
+    }
+  }
+
+  &__title:hover {
+    color: var(--primary-color);
+  }
+
+  &__desc {
+    width: 412px;
+    color: var(--text-color);
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 144.444%;
+
+    @include abstracts.screen(sm) {
+      margin-bottom: 16px;
+      width: 335px;
+      font-size: 1.4rem;
+      line-height: 142.857%;
+    }
+  }
+
+  &__time {
+    width: 74px;
+    color: var(--text-color);
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 100%;
+    opacity: 0.8;
+
+    @include abstracts.screen(sm) {
+      width: 64px;
+      font-size: 1.2rem;
+      font-weight: 500;
+      line-height: 150%;
+    }
+  }
+}
+
+.toast-item {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  margin-left: 60px;
+  transition: transform 0.2s ease;
+
+  @include abstracts.screen(sm) {
+    align-items: flex-start;
+    margin-left: 0;
+    gap: 14px;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  &:nth-child(2) {
+    padding: 34px 0;
+
+    @include abstracts.screen(sm) {
+      padding: 24px 0;
+    }
+  }
+
+  &__thumb {
+    width: 220px;
+    height: 219px;
+    border-radius: 8px;
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.08) 0%,
+        rgba(0, 0, 0, 0.08) 100%
+      ),
+      lightgray -125.25px -13px / 164.318% 110.046% no-repeat;
+    transition: transform 0.2s ease;
+
+    @include abstracts.screen(sm) {
+      max-width: 110px;
+      max-height: 110px;
+    }
+  }
+
+  &__thumb:hover {
+    transform: scale(1.05);
+  }
+
+  &__title {
+    width: 253px;
+    color: var(--navbar-link-hover-color);
+    font-family: Inter;
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 145.455%;
+    transition: color 0.3s ease;
+
+    @include abstracts.screen(sm) {
+      width: 211px;
+      font-size: 2rem;
+      line-height: 150%;
+    }
+  }
+
+  &__title:hover {
+    color: var(--primary-color);
+  }
+
+  &__desc {
+    margin: 12px 0 51px;
+    max-width: 239px;
+    color: var(--text-color);
+    font-weight: 400;
+    line-height: 162.5%;
+
+    @include abstracts.screen(sm) {
+      margin: 10px 0 16px;
+      width: 196px;
+      font-size: 1.4rem;
+      line-height: 142.857%;
+    }
+  }
+
+  &__time {
+    margin-bottom: 20px;
+    color: var(--text-color);
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 100%;
+    opacity: 0.8;
+
+    @include abstracts.screen(sm) {
+      font-size: 1.2rem;
+      font-weight: 500;
+      line-height: 150%;
+    }
+  }
+}

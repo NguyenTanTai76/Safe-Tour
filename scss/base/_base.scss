@@ -1,13 +1,14 @@
+@use '../abstracts';
+
 *,
 ::before,
 ::after {
   box-sizing: border-box;
 }
 
-
-
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 /* Font mặc định cho toàn bộ trang là Inter */
@@ -15,6 +16,7 @@ body {
   font-size: 1.6rem;
   font-family: 'Inter', sans-serif;
   color: var(--text-color);
+  background: var(--bg-body);
 }
 
 /* Font cho các thẻ tiêu đề (h1 -> h6) là Poppins */
@@ -45,4 +47,45 @@ select,
 textarea {
   font-family: inherit;
   color: inherit;
+}
+
+// Class chung
+.main-container {
+  @include abstracts.screen(sm) {
+    --grid-gutter-x: 0px !important;
+  }
+}
+
+.mg-t {
+  margin-top: 140px;
+
+  @include abstracts.screen(sm) {
+    margin-top: 60px;
+  }
+}
+
+.text-heading {
+  color: var(--navbar-link-hover-color);
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 125%;
+
+  @include abstracts.screen(sm) {
+    font-family: Inter;
+    font-size: 2.4rem;
+    line-height: 133.333%;
+  }
+}
+
+.text-desc {
+  margin-top: 16px;
+  color: var(--text-color);
+  font-weight: 400;
+  line-height: 162.5%;
+
+  @include abstracts.screen(sm) {
+    margin-top: 10px;
+    font-size: 1.4rem;
+    line-height: 142.857%;
+  }
 }
