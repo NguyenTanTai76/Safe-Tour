@@ -49,14 +49,14 @@
   }
 
   &__item {
-    max-height: 73.857px;
+    max-height: 90px;
     display: flex;
     align-items: center;
     gap: 30px;
     padding: 20px;
     border-radius: 8px;
     background-color: var(--bg-body);
-    box-shadow: 0 4px 10px var(--shadow-item);
+    box-shadow: 0 4px 10px var(--color-wrap);
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 
     &:nth-of-type(2) {
@@ -78,6 +78,9 @@
   }
 
   &__item-thumb {
+    max-width: 70px !important;
+    max-height: 70px !important;
+
     @include abstracts.screen(sm) {
       max-width: 40px;
     }

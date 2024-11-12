@@ -51,7 +51,7 @@
 
     &:hover {
       transform: scale(1.05);
-      box-shadow: 0 12px 24px var(--shadow-tour);
+      box-shadow: 0 12px 24px var(--bg-shadow-search);
       filter: brightness(1.2) saturate(1.3);
     }
   }

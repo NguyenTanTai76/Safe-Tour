@@ -101,6 +101,13 @@
       referrerpolicy="no-referrer"
     />
 
+    <!-- Getting Started With Swiper -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
     <!-- Styles -->
     <link rel="stylesheet" href="./assets/css/main.css" />
 
@@ -542,103 +549,113 @@
           </div>
 
           <!-- Trending media -->
-          <div class="row row-cols-3 row-cols-sm-1">
-            <!-- Trending item 1-->
-            <div class="col">
-              <div class="trending-item">
-                <div class="trending-item__wrap">
-                  <img
-                    src="./assets/img/trending/trending-01.png"
-                    class="trending-item__thumb"
-                    alt=""
-                  />
-                  <section class="trending-item__content">
-                    <div class="trending-item__header">
-                      <h3 class="trending-item__title">Mountain Hiking Tour</h3>
-                      <div class="trending-item__label">
-                        <p class="trending-item__place">12 Places</p>
-                        <span class="trending-item__separate"></span>
-                        <p class="trending-item__activity">3 Activities</p>
+          <div class="trending-media">
+            <div class="row row-cols-3 row-cols-sm-1" id="trending-cards">
+              <!-- Trending item 1-->
+              <div class="col">
+                <div class="trending-item">
+                  <div class="trending-item__wrap">
+                    <img
+                      src="./assets/img/trending/trending-01.png"
+                      class="trending-item__thumb"
+                      alt=""
+                    />
+                    <section class="trending-item__content">
+                      <div class="trending-item__header">
+                        <h3 class="trending-item__title">
+                          Mountain Hiking Tour
+                        </h3>
+                        <div class="trending-item__label">
+                          <p class="trending-item__place">12 Places</p>
+                          <span class="trending-item__separate"></span>
+                          <p class="trending-item__activity">3 Activities</p>
+                        </div>
                       </div>
-                    </div>
 
-                    <div class="trending-item__body">
-                      <p class="trending-item__price">$895.50</p>
-                      <a href="#!" class="trending-item__book">Book Now</a>
-                    </div>
+                      <div class="trending-item__body">
+                        <p class="trending-item__price">$895.50</p>
+                        <a href="#!" class="trending-item__book">Book Now</a>
+                      </div>
 
-                    <div class="trending-item__footer">
-                      <div class="trending-item__logo">ST</div>
+                      <div class="trending-item__footer">
+                        <div class="trending-item__logo">ST</div>
 
-                      <p class="trending-item__footer-desc">Safe Tour Agency</p>
-                    </div>
-                  </section>
+                        <p class="trending-item__footer-desc">
+                          Safe Tour Agency
+                        </p>
+                      </div>
+                    </section>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <!-- Trending item 2-->
-            <div class="col trending-col">
-              <div class="trending-item">
-                <div class="trending-item__wrap">
-                  <img
-                    src="./assets/img/trending/trending-02.png"
-                    class="trending-item__thumb"
-                    alt=""
-                  />
-                  <section class="trending-item__content">
-                    <div class="trending-item__header">
-                      <h3 class="trending-item__title">Tran Skyline</h3>
-                      <div class="trending-item__label">
-                        <p class="trending-item__place">12 Places</p>
-                        <span class="trending-item__separate"></span>
-                        <p class="trending-item__activity">3 Activities</p>
+              <!-- Trending item 2-->
+              <div class="col trending-col">
+                <div class="trending-item">
+                  <div class="trending-item__wrap">
+                    <img
+                      src="./assets/img/trending/trending-02.png"
+                      class="trending-item__thumb"
+                      alt=""
+                    />
+                    <section class="trending-item__content">
+                      <div class="trending-item__header">
+                        <h3 class="trending-item__title">Tran Skyline</h3>
+                        <div class="trending-item__label">
+                          <p class="trending-item__place">12 Places</p>
+                          <span class="trending-item__separate"></span>
+                          <p class="trending-item__activity">3 Activities</p>
+                        </div>
                       </div>
-                    </div>
 
-                    <div class="trending-item__body">
-                      <p class="trending-item__price">$769.99</p>
-                      <a href="#!" class="trending-item__book">Book Now</a>
-                    </div>
+                      <div class="trending-item__body">
+                        <p class="trending-item__price">$769.99</p>
+                        <a href="#!" class="trending-item__book">Book Now</a>
+                      </div>
 
-                    <div class="trending-item__footer">
-                      <div class="trending-item__logo">ST</div>
-                      <p class="trending-item__footer-desc">Safe Tour Agency</p>
-                    </div>
-                  </section>
+                      <div class="trending-item__footer">
+                        <div class="trending-item__logo">ST</div>
+                        <p class="trending-item__footer-desc">
+                          Safe Tour Agency
+                        </p>
+                      </div>
+                    </section>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <!-- Trending item 3-->
-            <div class="col trending-col">
-              <div class="trending-item">
-                <div class="trending-item__wrap">
-                  <img
-                    src="./assets/img/trending/trending-03.png"
-                    class="trending-item__thumb"
-                    alt=""
-                  />
-                  <section class="trending-item__content">
-                    <div class="trending-item__header">
-                      <h3 class="trending-item__title">Forest Wild Life</h3>
-                      <div class="trending-item__label">
-                        <p class="trending-item__place">12 Places</p>
-                        <span class="trending-item__separate"></span>
-                        <p class="trending-item__activity">3 Activities</p>
+              <!-- Trending item 3-->
+              <div class="col trending-col">
+                <div class="trending-item">
+                  <div class="trending-item__wrap">
+                    <img
+                      src="./assets/img/trending/trending-03.png"
+                      class="trending-item__thumb"
+                      alt=""
+                    />
+                    <section class="trending-item__content">
+                      <div class="trending-item__header">
+                        <h3 class="trending-item__title">Forest Wild Life</h3>
+                        <div class="trending-item__label">
+                          <p class="trending-item__place">12 Places</p>
+                          <span class="trending-item__separate"></span>
+                          <p class="trending-item__activity">3 Activities</p>
+                        </div>
                       </div>
-                    </div>
 
-                    <div class="trending-item__body">
-                      <p class="trending-item__price">$939.80</p>
-                      <a href="#!" class="trending-item__book">Book Now</a>
-                    </div>
+                      <div class="trending-item__body">
+                        <p class="trending-item__price">$939.80</p>
+                        <a href="#!" class="trending-item__book">Book Now</a>
+                      </div>
 
-                    <div class="trending-item__footer">
-                      <div class="trending-item__logo">ST</div>
-                      <p class="trending-item__footer-desc">Safe Tour Agency</p>
-                    </div>
-                  </section>
+                      <div class="trending-item__footer">
+                        <div class="trending-item__logo">ST</div>
+                        <p class="trending-item__footer-desc">
+                          Safe Tour Agency
+                        </p>
+                      </div>
+                    </section>
+                  </div>
                 </div>
               </div>
             </div>
@@ -984,7 +1001,7 @@
         </section>
 
         <!-- Tour Subscribe-->
-        <section class="tour-subscribe mg-t">
+        <section id="contact" class="tour-subscribe mg-t">
           <div class="tour-subscribe__wrap">
             <h2 class="tour-subscribe__heading">Subscribe our newsletter</h2>
             <p class="tour-subscribe__desc">
@@ -1027,5 +1044,7 @@
         load('#footer', './templates/footer.html');
       </script>
     </div>
+    <!-- Linking SwiperJS script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </body>
 </html>

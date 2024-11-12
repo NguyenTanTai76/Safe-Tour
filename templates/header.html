@@ -25,7 +25,7 @@
 
     <ul class="navbar__list">
       <li class="navbar__item">
-        <a href="" class="navbar__link">Home</a>
+        <a href="#!" class="navbar__link">Home</a>
       </li>
       <li class="navbar__item">
         <a href="#tour" class="navbar__link">About</a>
@@ -37,7 +37,7 @@
         <a href="#blog" class="navbar__link">Blog</a>
       </li>
       <li class="navbar__item">
-        <a href="#!" class="navbar__link">Pages</a>
+        <a href="#contact" class="navbar__link">Contact</a>
       </li>
     </ul>
   </nav>
@@ -46,6 +46,95 @@
 
   <!-- Action -->
   <div class="top-act d-sm-none">
-    <a href="#!" class="top-act__btn top-act__link">Contact us</a>
+    <a href="#!" class="top-act__btn top-act__link" id="contactBtn"
+      >Get Started</a
+    >
+  </div>
+
+  <!--  Modal Popup -->
+  <div id="contactModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+
+      <h2 class="modal-title">Hi you, have a good day🌻</h2>
+
+      <p class="modal-desc">Please sign in or create an account to proceed.</p>
+
+      <div class="modal-form-container">
+        <form id="modal-loginForm">
+          <div class="modal-email">
+            <label for="email" class="modal-email__label">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="Enter your email"
+              class="modal-email__input"
+            />
+          </div>
+
+          <div class="modal-password">
+            <label for="password" class="modal-password__label"
+              >Password:</label
+            >
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              placeholder="Enter your password"
+              class="modal-password__input"
+            />
+          </div>
+
+          <button type="submit" class="modal-submit-btn">Login</button>
+        </form>
+
+        <p class="modal-alternative__action">
+          Don't have an account?
+          <a href="#" id="createAccount" class="modal-alternative__link"
+            >Create one</a
+          >
+        </p>
+
+        <!-- Form tạo tài khoản -->
+        <form id="createAccountForm" style="display: none">
+          <label for="new-name">Full Name:</label>
+          <input
+            type="text"
+            id="new-name"
+            name="new-name"
+            required
+            placeholder="Enter your full name"
+          />
+
+          <label for="new-email">Email:</label>
+          <input
+            type="email"
+            id="new-email"
+            name="new-email"
+            required
+            placeholder="Enter your email"
+          />
+
+          <label for="new-password">Password:</label>
+          <input
+            type="password"
+            id="new-password"
+            name="new-password"
+            required
+            placeholder="Create a password"
+          />
+
+          <button type="submit" class="submit-btn">Sign Up</button>
+        </form>
+      </div>
+
+      <!-- Nút Continue -->
+      <div class="modal-continue">
+        <button class="modal-continue__btn" >Continue</button>
+      </div>
+    </div>
   </div>
 </div>

@@ -1,0 +1,140 @@
+@use '../abstracts';
+
+/*  Modal Popup */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: var(--modal-shadow);
+
+  justify-content: center;
+  align-items: center;
+
+  &.show {
+    display: block;
+  }
+
+  /* Modal Content */
+  &-content {
+    background-color: var(--bg-body);
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid var(--modal-color-content);
+    width: 80%;
+    max-width: 500px;
+    height: 450px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--bg-shadow-search);
+  }
+
+  .close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 2.8rem;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      color: #000;
+    }
+  }
+
+  &-title {
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: var(--text-color);
+    margin: 20px 0;
+  }
+
+  &-desc {
+    color: var(--text-color);
+    margin-bottom: 20px;
+  }
+
+  &-form-container {
+    margin-bottom: 20px;
+  }
+
+  &-email,
+  &-password {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+
+  &-email__label,
+  &-password__label {
+    font-size: 1.4rem;
+    color: var(--text-color);
+  }
+
+  &-email__input,
+  &-password__input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid var(--bg-separate);
+    border-radius: 4px;
+    color: var(--text-color);
+  }
+
+  &-email__input:focus,
+  &-password__input:focus {
+    border-color: var(--bg-box-shadow);
+    outline: none;
+  }
+
+  /* Submit Button */
+  &-submit-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.6rem;
+    color: var(--bg-body);
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px var(--color-wrap);
+    margin-bottom: 10px;
+
+    &:hover {
+      background-color: var(--modal-submit-btn-color-hover);
+      box-shadow: 0 4px 10px var(--modal-submit-btn-hover);
+    }
+  }
+
+  /* Alternative Action (Create Account) */
+  &-alternative__action {
+    font-size: 1.4rem;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  &-alternative__link {
+    color: var(--bg-color);
+  }
+
+  /* Continue Button */
+  &-continue {
+    margin-top: 20px;
+  }
+
+  &-continue__btn {
+    width: 100%;
+    padding: 12px;
+    color: var(--bg-body);
+    background-color: var(--top-act-btn-bg-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--top-act-btn-bg-hover);
+    }
+  }
+}

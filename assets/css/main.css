@@ -1286,6 +1286,11 @@ html {
   /* Top Action Button */
   --top-act-btn-bg-color: #31c3e0;
   --top-act-btn-bg-hover: #28b3d8;
+  /*  Modal Popup */
+  --modal-shadow: rgba(0, 0, 0, 0.4);
+  --modal-color-content: #888;
+  --modal-submit-btn-color-hover: #e67319;
+  --modal-submit-btn-shadow-hover: rgba(0, 0, 0, 0.15);
   /* Hero */
   --hero-link: #4d4f56;
   --hero-card-number: #0d1e3f;
@@ -1300,9 +1305,7 @@ html {
   --bg-shadow-search: rgba(0, 0, 0, 0.2);
   /* Tour */
   --text-body-title: #1f1d63;
-  --shadow-tour: rgba(0, 0, 0, 0.2);
   /* Why choose us */
-  --shadow-item: rgba(0, 0, 0, 0.1);
   --shadow-item-hover: rgba(0, 0, 0, 0.15);
   /* Trending */
   --color-hover-control: #505050;
@@ -1899,7 +1902,7 @@ html {
 }
 .tour-item__thumb:hover {
   transform: scale(1.05);
-  box-shadow: 0 12px 24px var(--shadow-tour);
+  box-shadow: 0 12px 24px var(--bg-shadow-search);
   filter: brightness(1.2) saturate(1.3);
 }
 .tour-item__content {
@@ -2014,14 +2017,14 @@ html {
   }
 }
 .choose-us__item {
-  max-height: 73.857px;
+  max-height: 90px;
   display: flex;
   align-items: center;
   gap: 30px;
   padding: 20px;
   border-radius: 8px;
   background-color: var(--bg-body);
-  box-shadow: 0 4px 10px var(--shadow-item);
+  box-shadow: 0 4px 10px var(--color-wrap);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 .choose-us__item:nth-of-type(2) {
@@ -2041,6 +2044,10 @@ html {
     padding: 0;
     gap: 14px;
   }
+}
+.choose-us__item-thumb {
+  max-width: 70px !important;
+  max-height: 70px !important;
 }
 @media (max-width: 575.98px) {
   .choose-us__item-thumb {
@@ -3167,6 +3174,121 @@ html {
   color: var(--bg-body);
   box-shadow: 0px 40px 40px -15px var(--bg-box-shadow);
   transform: scale(1.05);
+}
+
+/*  Modal Popup */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: var(--modal-shadow);
+  justify-content: center;
+  align-items: center;
+  /* Modal Content */
+  /* Submit Button */
+  /* Alternative Action (Create Account) */
+  /* Continue Button */
+}
+.modal.show {
+  display: block;
+}
+.modal-content {
+  background-color: var(--bg-body);
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid var(--modal-color-content);
+  width: 80%;
+  max-width: 500px;
+  height: 450px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px var(--bg-shadow-search);
+}
+.modal .close-btn {
+  color: #aaa;
+  float: right;
+  font-size: 2.8rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.modal .close-btn:hover, .modal .close-btn:focus {
+  color: #000;
+}
+.modal-title {
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: var(--text-color);
+  margin: 20px 0;
+}
+.modal-desc {
+  color: var(--text-color);
+  margin-bottom: 20px;
+}
+.modal-form-container {
+  margin-bottom: 20px;
+}
+.modal-email, .modal-password {
+  margin-bottom: 15px;
+  text-align: left;
+}
+.modal-email__label, .modal-password__label {
+  font-size: 1.4rem;
+  color: var(--text-color);
+}
+.modal-email__input, .modal-password__input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid var(--bg-separate);
+  border-radius: 4px;
+  color: var(--text-color);
+}
+.modal-email__input:focus, .modal-password__input:focus {
+  border-color: var(--bg-box-shadow);
+  outline: none;
+}
+.modal-submit-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.6rem;
+  color: var(--bg-body);
+  background-color: var(--bg-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px var(--color-wrap);
+  margin-bottom: 10px;
+}
+.modal-submit-btn:hover {
+  background-color: var(--modal-submit-btn-color-hover);
+  box-shadow: 0 4px 10px var(--modal-submit-btn-hover);
+}
+.modal-alternative__action {
+  font-size: 1.4rem;
+  margin-top: 10px;
+  text-align: center;
+}
+.modal-alternative__link {
+  color: var(--bg-color);
+}
+.modal-continue {
+  margin-top: 20px;
+}
+.modal-continue__btn {
+  width: 100%;
+  padding: 12px;
+  color: var(--bg-body);
+  background-color: var(--top-act-btn-bg-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.modal-continue__btn:hover {
+  background-color: var(--top-act-btn-bg-hover);
 }
 
 /*# sourceMappingURL=main.css.map */

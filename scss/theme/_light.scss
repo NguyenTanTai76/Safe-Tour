@@ -18,6 +18,12 @@ html {
   --top-act-btn-bg-color: #31c3e0;
   --top-act-btn-bg-hover: #28b3d8;
 
+  /*  Modal Popup */
+  --modal-shadow: rgba(0, 0, 0, 0.4);
+  --modal-color-content: #888;
+  --modal-submit-btn-color-hover: #e67319;
+  --modal-submit-btn-shadow-hover: rgba(0, 0, 0, 0.15);
+
   /* Hero */
 
   --hero-link: #4d4f56;
@@ -34,10 +40,9 @@ html {
 
   /* Tour */
   --text-body-title: #1f1d63;
-  --shadow-tour: rgba(0, 0, 0, 0.2);
 
   /* Why choose us */
-  --shadow-item: rgba(0, 0, 0, 0.1);
+
   --shadow-item-hover: rgba(0, 0, 0, 0.15);
 
   /* Trending */

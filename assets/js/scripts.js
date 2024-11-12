@@ -3,24 +3,19 @@ const $$ = document.querySelectorAll.bind(document);
 
 /**
  * Hàm tải template
- *
- * Cách dùng:
- * <div id="parent"></div>
- * <script>
- *  load("#parent", "./path-to-template.html");
- * </script>
  */
 function load(selector, path) {
   const cached = localStorage.getItem(path);
+  const element = $(selector);
   if (cached) {
-    $(selector).innerHTML = cached;
+    element.innerHTML = cached;
   }
 
   fetch(path)
     .then((res) => res.text())
     .then((html) => {
       if (html !== cached) {
-        $(selector).innerHTML = html;
+        element.innerHTML = html;
         localStorage.setItem(path, html);
       }
     })
@@ -30,8 +25,7 @@ function load(selector, path) {
 }
 
 /**
- * Hàm kiểm tra một phần tử
- * có bị ẩn bởi display: none không
+ * Hàm kiểm tra một phần tử có bị ẩn bởi display: none không
  */
 function isHidden(element) {
   if (!element) return true;
@@ -52,8 +46,7 @@ function isHidden(element) {
 }
 
 /**
- * Hàm buộc một hành động phải đợi
- * sau một khoảng thời gian mới được thực thi
+ * Hàm buộc một hành động phải đợi sau một khoảng thời gian mới được thực thi
  */
 function debounce(func, timeout = 300) {
   let timer;
@@ -67,52 +60,34 @@ function debounce(func, timeout = 300) {
 
 /**
  * Hàm tính toán vị trí arrow cho dropdown
- *
- * Cách dùng:
- * 1. Thêm class "js-dropdown-list" vào thẻ ul cấp 1
- * 2. CSS "left" cho arrow qua biến "--arrow-left-pos"
  */
 const calArrowPos = debounce(() => {
   if (isHidden($('.js-dropdown-list'))) return;
 
-  const items = $$('.js-dropdown-list > li');
-
-  items.forEach((item) => {
+  $$('.js-dropdown-list > li').forEach((item) => {
     const arrowPos = item.offsetLeft + item.offsetWidth / 2;
     item.style.setProperty('--arrow-left-pos', `${arrowPos}px`);
   });
 });
 
-// Tính toán lại vị trí arrow khi resize trình duyệt
-window.addEventListener('resize', calArrowPos);
-
-// Tính toán lại vị trí arrow sau khi tải template
-window.addEventListener('template-loaded', calArrowPos);
+// Recalculate arrow position on resize or after template load
+['resize', 'template-loaded'].forEach((event) =>
+  window.addEventListener(event, calArrowPos)
+);
 
 /**
  * Giữ active menu khi hover
- *
- * Cách dùng:
- * 1. Thêm class "js-menu-list" vào thẻ ul menu chính
- * 2. Thêm class "js-dropdown" vào class "dropdown" hiện tại
- *  nếu muốn reset lại item active khi ẩn menu
  */
-window.addEventListener('template-loaded', handleActiveMenu);
-
 function handleActiveMenu() {
-  const dropdowns = $$('.js-dropdown');
-  const menus = $$('.js-menu-list');
   const activeClass = 'menu-column__item--active';
 
   const removeActive = (menu) => {
     menu.querySelector(`.${activeClass}`)?.classList.remove(activeClass);
   };
 
-  const init = () => {
-    menus.forEach((menu) => {
-      const items = menu.children;
-      if (!items.length) return;
-
+  const initMenu = (menu) => {
+    const items = menu.children;
+    if (items.length) {
       removeActive(menu);
       items[0].classList.add(activeClass);
 
@@ -123,52 +98,78 @@ function handleActiveMenu() {
           item.classList.add(activeClass);
         };
       });
-    });
+    }
   };
 
-  init();
+  $$('.js-menu-list').forEach(initMenu);
 
-  dropdowns.forEach((dropdown) => {
-    dropdown.onmouseleave = () => init();
+  $$('.js-dropdown').forEach((dropdown) => {
+    dropdown.onmouseleave = () => $$('.js-menu-list').forEach(initMenu);
   });
 }
 
+window.addEventListener('template-loaded', handleActiveMenu);
+
 /**
  * JS toggle
- *
- * Cách dùng:
- * <button class="js-toggle" toggle-target="#box">Click</button>
- * <div id="box">Content show/hide</div>
  */
-window.addEventListener('template-loaded', initJsToggle);
-
 function initJsToggle() {
   $$('.js-toggle').forEach((button) => {
     const target = button.getAttribute('toggle-target');
-    if (!target) {
-      document.body.innerText = `Cần thêm toggle-target cho: ${button.outerHTML}`;
-    }
-    button.onclick = () => {
-      if (!$(target)) {
-        return (document.body.innerText = `Không tìm thấy phần tử "${target}"`);
-      }
-      const isHidden = $(target).classList.contains('hide');
+    if (!target)
+      return console.warn(`Cần thêm toggle-target cho: ${button.outerHTML}`);
 
+    button.onclick = () => {
+      const targetElem = $(target);
+      if (!targetElem) {
+        return console.warn(`Không tìm thấy phần tử "${target}"`);
+      }
+
+      const isHidden = targetElem.classList.contains('hide');
       requestAnimationFrame(() => {
-        $(target).classList.toggle('hide', !isHidden);
-        $(target).classList.toggle('show', isHidden);
+        targetElem.classList.toggle('hide', !isHidden);
+        targetElem.classList.toggle('show', isHidden);
       });
     };
   });
 }
 
-// Hero
+window.addEventListener('template-loaded', initJsToggle);
+
+// Hero Section
 document.addEventListener('DOMContentLoaded', () => {
   const heroSection = $('.hero');
+  setTimeout(() => {
+    heroSection.classList.add('visible');
+  }, 300);
+});
 
-  window.onload = function () {
-    setTimeout(() => {
-      heroSection.classList.add('visible');
-    }, 300);
+// Modal Popup Section
+document.addEventListener('DOMContentLoaded', () => {
+  const contactModal = $('#contactModal');
+  const contactBtn = $('#contactBtn');
+  const closeModal = $('#closeModal');
+  const btnContinue = $('.modal-continue__btn'); // Nút Continue
+  const loginForm = $('#modal-loginForm');
+  const createAccountForm = $('#createAccountForm');
+
+  // Mở modal khi bấm nút "Get Started"
+  contactBtn.onclick = () => contactModal.classList.add('show');
+
+  // Đóng modal khi bấm nút đóng (x)
+  closeModal.onclick = () => contactModal.classList.remove('show');
+
+  // Đóng modal và chuyển form khi bấm nút "Continue"
+  btnContinue.onclick = () => {
+    loginForm.style.display = 'none';
+    createAccountForm.style.display = 'block';
+    contactModal.classList.remove('show');
+  };
+
+  // Đóng modal khi click ra bên ngoài modal
+  window.onclick = (event) => {
+    if (event.target === contactModal) {
+      contactModal.classList.remove('show');
+    }
   };
 });
